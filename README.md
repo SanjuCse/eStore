@@ -1,27 +1,18 @@
 # EStore
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.9.
+![Screenshot of Project](image.png)
 
-## Development server
+## Details
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Used [Fake Store API](https://fakestoreapi.com/) and Angluar 17 to develop this project.
 
-## Code scaffolding
+## Steps to execute this project
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Clone the Repo `git clone https://github.com/SanjuCse/EStore`.
+- Run Project Through `ng serve -o`
 
-## Build
+## References
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [Fake Store API](https://fakestoreapi.com/)
+- [Angular 17](https://angular.io/)
+- [VS Code](https://code.visualstudio.com/)

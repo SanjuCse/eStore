@@ -1,1 +1,86 @@
-<p>products works!</p>
+<div class="container">
+  @if (this.products.length!=0) {
+  <div class="row">
+    <div class="col">
+      <h3 class="text-start">
+        There are {{ this.products.length }} Products!
+        <!-- & Selected : {{ selectedCategory }} -->
+      </h3>
+    </div>
+    <div class="col text-end">
+      <h4>Choose Categories</h4>
+    </div>
+    <div class="col-4 text-end">
+      <select
+        name=""
+        id=""
+        class="form-control border border-2"
+        [(ngModel)]="selectedCategory"
+        (change)="getAllProductsCategoriesWise()"
+      >
+        <option value="all">All</option>
+        @for (cat of productsCat; track $index) {
+        <option [value]="cat">
+          {{ cat | titlecase }}
+        </option>
+        <!-- <option [value]="cat | titlecase"></option> -->
+        }
+      </select>
+    </div>
+  </div>
+  @if (this.productsCat.length!=0) {
+  <h3 class="text-center">
+    <!-- There are {{ this.productsCat.length }} Categories [{{ this.productsCat }}] -->
+  </h3>
+  }
+  <div class="row">
+    @for (product of products; track product.id) {
+    <!-- <div class="col-md-4"></div> -->
+    <div class="card ms-5 text-center col-md-3 mt-3 col-sm-10 p-0">
+      <div class="card-header p-0">
+        <img [src]="products[$index].image" alt="" class="w-50" />
+      </div>
+      <div class="card-body">
+        <div class="row mb-2" id="RateAndReview">
+          <div class="col text-start">
+            <span class="badge rounded-pill bg-success">
+              {{ product.rating.rate }}
+              <span class="bi bi-star-fill"></span>
+            </span>
+            <span class="text-secondary">
+              {{ product.rating.count }} ratings</span
+            >
+          </div>
+
+          <div class="col text-end">
+            <h4>{{ product.price | currency : "INR" }}</h4>
+          </div>
+        </div>
+        <h5 class="card-title">{{ product.title }}</h5>
+        <p class="card-text">
+          {{ product.description }}
+        </p>
+      </div>
+
+      <!-- <div class="card-footer text-muted">2 days ago</div> -->
+      <div class="row card-footer text-muted">
+        <div class="col col-6">
+          <button type="button" class="btn btn-outline-primary">
+            <span class="bi bi-cart-fill"></span>
+            <small>{{ "Add To Card" | uppercase }}</small>
+          </button>
+        </div>
+        <div class="col col-6">
+          <button type="button" class="btn btn-outline-success">
+            <span class="bi bi-lightning-fill"></span>
+            <small>{{ "Buy Now" | uppercase }}</small>
+          </button>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+  }@else {
+  <h3 class="text-center">Products Empty</h3>
+  }
+</div>
